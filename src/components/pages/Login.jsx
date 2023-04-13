@@ -31,10 +31,10 @@ const Login = () => {
     }
 
   return (
-    <LoginTemplate>
+    <LoginTemplate title="Iniciar sesión">
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <input className="border-gray-300 w-full rounded-2xl"
+          <input className="border-gray-300 w-full rounded-full"
             type="email"
             placeholder="Correo electrónico"
             name="email"
@@ -42,7 +42,7 @@ const Login = () => {
           />
         </div>
         <div className="mb-4">
-          <input className="border-gray-300 w-full rounded-2xl"
+          <input className="border-gray-300 w-full rounded-full"
             type="password"
             placeholder="Contraseña"
             name="password"
@@ -50,7 +50,7 @@ const Login = () => {
           />
         </div>
         <div className="text-center pt-1 mb-12 pb-1">
-          <button className="bg-gradient w-full py-2 rounded-full text-gray-100" type="submit">
+          <button className="bg-gradient w-full mb-2 py-2 rounded-full text-gray-100" type="submit">
             Ingresar
           </button>
           <Link className="text-gray-500 " to="/registro">

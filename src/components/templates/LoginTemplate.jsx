@@ -1,6 +1,6 @@
 import React, { Children } from 'react'
 
-export const LoginTemplate = ({ children }) => {
+export const LoginTemplate = ({ children, title }) => {
     return (
         <section className="h-full gradient-form bg-gray-200 md:h-screen">
           <div className="container m-auto px-6 h-full">
@@ -16,6 +16,9 @@ export const LoginTemplate = ({ children }) => {
                             src="https://ed.team/images/logo/logo.svg"
                             alt="logo"
                           />
+                          <h4 className='text-xl font-semibold my-5 '>
+                            { title }
+                          </h4>
                         </div>
                         { children }
                       </div>
