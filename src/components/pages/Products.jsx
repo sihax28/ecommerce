@@ -1,9 +1,25 @@
+import useFetch from "../../hooks/useFetch"
+import Loader from "../atoms/Loader";
+import ProductCard from "../molecules/ProductCard";
+
 const Products = () => {
+
+  const { data, error, loading } = useFetch("public/products");
+
+  if (loading) return <Loader/>
+  if (error) return <div className="alert_error">{error?.message}</div>
+
   return (
-    <div>
-      <h1>Productos</h1>
-      <p>Explora todos nuestros productos</p>
-    </div>
+    <section className="py-16 max-w-256 m-auto">
+      <h1 className="text-3xl mb-6">Explora nuestros productos</h1>
+      <div className="grid grid-cols-4 gap-6">
+        {
+          data.map((product) => (
+            <ProductCard key={product.id} product={product}/>
+          ))
+        }
+      </div>
+    </section>
   )
 }
 

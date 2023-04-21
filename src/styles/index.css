@@ -2,10 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-gradient{
-    background: linear-gradient(to right, #1460bc, #2498ce, #36a3dd, #4482c4);
+@layer components {
+    .bg-gradient{
+        background: linear-gradient(to right, #1460bc, #2498ce, #36a3dd, #4482c4);
+    }
+    
+    .menu-item {
+        @apply py-5 px-4 hover:text-sky-100;
+    }
+
+    .btn_primary {
+        @apply bg-gradient text-white px-5 py-2 rounded-full
+    }
+    .alert_error {
+        @apply flex bg-red-200 text-red-700 px-10 py-2 border border-red-700;
+    }
+
+    td {
+        @apply py-3 px-6;
+    }
+    
+    th{
+        @apply uppercase py-3 px-6 text-gray-700 text-sm;
+    }
+    
+    tr{
+        @apply border border-b border-l-0 border-r-0 border-t-0;
+    }
+
+    thead {
+        @apply bg-gray-100 rounded-xl;
+    }
+
+    .th_2 {
+        @apply font-semibold;
+    }
 }
 
-.menu-item {
-    @apply py-5 px-4 hover:text-sky-100;
+
+@layer base {
+    [type='text'],
+    [type='email'],
+    [type='url'],
+    [type='password'],
+    [type='number'],
+    [type='date'],
+    [type='datetime-local'],
+    [type='month'],
+    [type='search'],
+    [type='tel'],
+    [type='time'],
+    [type='week'],
+    [multiple],
+    textarea,
+    select {
+        @apply w-full border border-gray-400 focus:border-blue-500 rounded-lg ;
+    }
 }

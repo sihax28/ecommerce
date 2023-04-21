@@ -2,7 +2,6 @@ import axios from "axios"
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../../constants/env";
-import { setToken } from "../../helpers/auth";
 import { LoginTemplate } from '../templates/LoginTemplate'
 
 const Register = () => {
