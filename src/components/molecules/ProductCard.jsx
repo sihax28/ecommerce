@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { formatPrice } from '../../helpers/number';
@@ -7,8 +8,8 @@ const ProductCard = ({ product }) => {
     const { images, product_name, id, price, description  } = product;
 
   return (
-    <article className='w-full max-w-sm shadow-lg rounded-lg bg-white p-5'>
-        <div className='mb-5 rounded-lg overflow-hidden'>
+    <article className="w-full max-w-sm shadow-lg rounded-lg bg-white p-5]">
+        <div className="mb-5 rounded-lg overflow-hidden">
             <Link to={`/productos/${id}`}>
                 <img 
                     className='align-middle h-40 w-full object-cover' 

@@ -7,6 +7,9 @@ import App from "../components/templates/App"
 import Register from "../components/pages/Register"
 import Form from "../components/pages/admin/products/Form"
 import Table from "../components/pages/admin/products/Table"
+import Admin from "../components/templates/Admin"
+import Product from "../components/pages/Product"
+import Cart from "../components/pages/Cart"
 
 const router = createBrowserRouter([
     {
@@ -21,7 +24,14 @@ const router = createBrowserRouter([
             {
                 path: "/productos",
                 element: <Products/>,
-                errorElement: <Error404/>
+            },
+            {
+                path: "/productos/:id",
+                element: <Product/>,
+            },
+            {
+                path: "/carrito",
+                element: <Cart/>,
             }
         ]
     },
@@ -34,16 +44,22 @@ const router = createBrowserRouter([
         element: <Register/>
     },
     {
-        path: "/admin/productos/crear",
-        element: <Form/>
-    },
-    {
-        path: "/admin/productos",
-        element: <Table/>
-    },
-    {
-        path: "/admin/productos/editar/:id",
-        element: <Form/>
+        path: "/admin",
+        element: <Admin/>,
+        children: [
+            {
+                path: "/admin/productos/crear",
+                element: <Form/>
+            },
+            {
+                path: "/admin/productos",
+                element: <Table/>
+            },
+            {
+                path: "/admin/productos/editar/:id",
+                element: <Form/>
+            }
+        ]
     }
     
     

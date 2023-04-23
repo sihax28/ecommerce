@@ -1,7 +1,6 @@
 import { API_URL } from "../../constants/env"
 
 function Home() {
-
   return (
     <>
       <div>

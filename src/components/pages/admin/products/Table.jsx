@@ -1,23 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loader from "../../../atoms/Loader";
 import useFetch from "../../../../hooks/useFetch";
 import { API_URL } from "../../../../constants/env";
 import { token } from "../../../../helpers/auth";
 import { formatPrice } from "../../../../helpers/number";
+import axios from "axios";
 
 
 const Table = () => {
 
   const { data, error, loading } = useFetch("public/products");
 
+  const nav = useNavigate();
+
   const deleteProduct = (product) => {
     if (window.confirm("Estás seguro de eliminar")){
       axios.delete(`${API_URL}/admin/products/${product.id}`, {
         headers: {
-          Authorization: `Bearer- ${token()}`
+          Authorization: `Bearer ${token()}`,
         }
       })
-      .then(() => alert("Producto eliminado"))
+      .then(() => {nav("/admin/productos")})
     }
   }
 
